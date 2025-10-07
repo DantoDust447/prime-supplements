@@ -17,7 +17,7 @@
     <header>
         <nav>
             <img src="<?=base_url('images/logo.png')?>" alt="Logo de la empresa" class="logo">
-            <a href="<?=base_url('/')?>">Prime Supplements</a>
+            <a href="<?=base_url('/')?>" class="header-links">Prime Supplements</a>
             <div class="link-container">
                 <a href="<?=base_url('ver_categorias')?>" class="header-links">Categorias</a>
                 <a href="<?=base_url('ver_marcas')?>" class="header-links">Marcas</a>

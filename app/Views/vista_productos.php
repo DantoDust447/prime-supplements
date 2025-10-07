@@ -50,28 +50,26 @@
     </header>
     <main>
         <br>
-        <h1 class="text-center">Marcas</h1>
-        <hr>
-        <?php foreach ($marcas  as $marca):
-                ?>
         <div class="container">
-            <table class="table">
+            <table class="table table-striped" >
                 <thead>
-                    <th class="table-active"><?= esc($marca['marca_nombre'])?></th>
-                    <th class="text-center table-active"><a class="btn btn-outline-light">Productos</a></th>
+                    <th class="table-active"></th>
+                    <th class="table-active">Productos</th>
+                    <th class="table-active">Precio</th>
+                    <th class="table-active">Categoria</th>
                 </thead>
                 <tbody>
+                    <?php foreach($productos as $producto):?>
                     <tr>
-                        <td><?= esc($marca['descripcion'])?></td>
-                        <td></td>
+                        <td><img src="<?= esc($producto['imagen_producto'])?>" alt="Imagen de <?= esc($producto['nombre'])?>" style="width:80px; border-radius:10px;"></td>
+                        <td><?= esc($producto['nombre'])?></td>
+                        <td>Q.<?= esc($producto['precio'])?></td>
+                        <td><?= esc($producto['categoria_id'])?></td> 
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
-        <?php
-        endforeach;
-         ?>
-    </main>
-</body>
-
+    </main>    
+    </body>
 </html>
