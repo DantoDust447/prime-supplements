@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 
 //pagina de inicio
 $routes->get('/', 'HomeController::index');
+$routes->get('nosotros', 'HomeController::informacion');
 
 //Procesos de Login
 $routes->get('login', 'LoginController::index');

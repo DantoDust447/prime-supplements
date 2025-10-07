@@ -13,4 +13,8 @@ class HomeController extends BaseController
         $datos['productos'] = $producto->findAll();
         return view('index', $datos);
     }
+    public function informacion()
+    {
+        return view('nosotros');
+    }
 }

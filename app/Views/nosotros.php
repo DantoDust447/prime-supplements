@@ -48,30 +48,28 @@
 
         </div>
     </header>
+    <br>
     <main>
-        <br>
         <div class="container">
-            <table class="table table-striped" >
-                <thead>
-                    <th class="table-active"></th>
-                    <th class="table-active">Productos</th>
-                    <th class="table-active">Descripción</th>
-                    <th class="table-active">Precio</th>
-                    <th class="table-active">Cantidad</th>
-                </thead>
-                <tbody>
-                    <?php foreach($productos as $producto):?>
-                    <tr>
-                        <td><img src="<?= esc($producto['imagen_producto'])?>" alt="Imagen de <?= esc($producto['nombre'])?>" style="width:80px; border-radius:10px;"></td>
-                        <td><?= esc($producto['nombre'])?></td>
-                        <td><?= esc($producto['descripcion'])?></td>
-                        <td>Q.<?= esc($producto['precio'])?></td>
-                        <td><?= esc($producto['cantidad_peso'])?></td> 
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h1 class="text-center">Nosotros</h1>
+                </li>
+                <li class="list-group-item">
+                    <h3 class="text-center">Misión</h3>
+                </li>
+                <li class="list-group-item">
+                    <h3 class="text-center">Visión</h3>
+                </li>
+                <li class="list-group-item">
+                    <h3 class="text-center">Valores</h3>
+                </li>
+                <li class="list-group-item">
+                    <h3 class="text-center">¿Por qué elegirnos?</h3>
+                </li>
+            </ul>
         </div>
-    </main>    
-    </body>
+    </main>
+</body>
+
 </html>
