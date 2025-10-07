@@ -1,0 +1,74 @@
+nav{
+    background-color: #1a1a1a;
+    overflow: hidden;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header-links{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 16px;
+    text-align: center;
+}
+.search-bar{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+}
+.link-container{
+    flex: 3;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    height: 100%;
+    margin-left: 20px;
+}
+.form-control{
+    border: none;
+    height: 70%;
+    width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.logo{
+    height: 80px;
+    margin-left: 20px;
+    margin-right: 10px;
+    align-self: center;
+    object-fit: contain;
+}
+.btn-group{
+    margin-right: 20px;
+}
+.social-network-bar{
+    color: #ffffff !important;
+    background-color: #ad0000;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+}
+.social-icon-container{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.card-container{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
