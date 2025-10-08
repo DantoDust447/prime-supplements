@@ -26,7 +26,7 @@
             </div>
             <form method="get" action="" class="search-bar">
                 <input type="text" class="form-control" placeholder="Buscar">
-                <i class="bi bi-search"></i>
+                <i class="bi bi-search"></i>    
             </form>
 
             <div class="btn-group" role="group" aria-label="Default button group">
