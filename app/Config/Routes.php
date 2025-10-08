@@ -95,3 +95,4 @@ $routes->post('modificar_rol', 'RolController::modificar');
 
 //carrito
 $routes->get('carrito', 'CarritoController::index');
+$routes->post('agregar_al_carrito', 'CarritoController::addToCart');

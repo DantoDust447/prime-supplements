@@ -52,17 +52,17 @@
         <hr>
         <h1 class="text-center">Producto</h1>
         
-        <div class="container">
+        <form class="container" action="<?=base_url('agregar_al_carrito')?>" method="post">
             <?php if(isset($datos)): ?>
             <div class="card" style="width: 18rem;">
                 <img src="<?=esc($datos['imagen_producto'])?>" class="card-img-top" alt="Algo salió mal con la imagen" frameborder="">
                 <div class="card-body">
                     <h5 class="card-title"><?= esc($datos['nombre'])?></h5>
                     <p class="card-text"><?= esc($datos['descripcion'])?></p>
-                    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                    <button type="submit" class="btn btn-outline-light">Añadir al carrito</button>
                 </div>
             <?php endif; ?>
-        </div>
+            </form>
     </main>
 </body>
 

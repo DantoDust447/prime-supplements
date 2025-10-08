@@ -48,3 +48,34 @@
 
         </div>
     </header>
+    <main>
+        <h1><?= esc($title) ?></h1>
+
+        <?php if (!empty($cartItems)): ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($cartItems as $item): ?>
+                <tr>
+                    <td><?= esc($item['name']) ?></td>
+                    <td>$<?= number_format($item['price'], 2) ?></td>
+                    <td><?= esc($item['qty']) ?></td>
+                    <td>$<?= number_format($item['price'] * $item['qty'], 2) ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php else: ?>
+        <p>Tu carrito de compras está vacío.</p>
+        <?php endif; ?>
+    </main>
+</body>
+
+</html>
