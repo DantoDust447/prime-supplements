@@ -52,20 +52,60 @@
     <main>
         <div class="container">
             <ul class="list-group">
-                <li class="list-group-item">
+                <li class="list-group-item list-group-item-success">
                     <h1 class="text-center">Nosotros</h1>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item list-group-item-secondary">
+                    <p>En Prime Supplements creemos que cada persona puede
+                        alcanzar su mejor versión con disciplina, constancia
+                        y el apoyo de los suplementos adecuados. </p>
+                    <p>
+                        Somos una tienda dedicada a ofrecer productos 100%
+                        originales y de alta calidad, seleccionados especialmente
+                        para ayudarte a mejorar tu rendimiento, lograr tus
+                        objetivos deportivos y mantener un estilo de vida saludable.</p>
+                </li>
+                <li class="list-group-item list-group-item-success">
                     <h3 class="text-center">Misión</h3>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item list-group-item-secondary">
+                    <p>
+                        Brindar a nuestros clientes suplementos confiables, efectivos y seguros,
+                        acompañados de un servicio cercano y personalizado.
+                    </p>
+                </li>
+                <li class="list-group-item list-group-item-success">
                     <h3 class="text-center">Visión</h3>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item list-group-item-secondary">
+                    <p>
+                        Convertirnos en la tienda de suplementos deportivos líder en Guatemala,
+                        reconocida por la confianza, la innovación y la pasión por el deporte.
+                    </p>
+                </li>
+                <li class="list-group-item list-group-item-success">
                     <h3 class="text-center">Valores</h3>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item list-group-item-secondary">
+                    <ul>
+                        <li>Calidad garantizada en cada producto.</li>
+
+                        <li>Transparencia y confianza con nuestros clientes.</li>
+
+                        <li>Pasión por el deporte y la vida saludable.</li>
+
+                        <li>Compromiso con tu bienestar y resultados.</li>
+                    </ul>
+                <li class="list-group-item list-group-item-success">
                     <h3 class="text-center">¿Por qué elegirnos?</h3>
+                </li>
+                <li class="list-group-item list-group-item-secondary">
+                    <ul>
+                        <li>Productos auténticos y certificados.</li>
+                        <li>Asesoría personalizada según tus objetivos (ganar masa, definición o bienestar).</li>
+                        <li>Envíos rápidos y seguros a todo el país.</li>
+                        <li>Comunidad activa que comparte motivación y resultados.</li>
+                    </ul>
                 </li>
             </ul>
         </div>
