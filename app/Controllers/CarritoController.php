@@ -22,18 +22,17 @@ class CarritoController extends BaseController
 
         // 2. Obtener los detalles del producto desde la base de datos
         $productosModel = new ProductosModel();
-        $product      = $productosModel->find($productId);
+        $productos      = $productosModel->find($productId);
 
-        if (!$product) {
+        if (!$productos) {
             // Manejar error: Producto no encontrado
             return redirect()->back()->with('error', 'Producto no encontrado.');
         }
-
         // 3. Preparar el ítem del carrito (con los datos SQL)
         $cartItem = [
-            'id'       => $product['producto_id'],
-            'name'     => $product['nombre'],
-            'price'    => $product['precio'],
+            'producto_id'=> $productos['producto_id'],
+            'nombre'     => $productos['nombre'],
+            'precio'    => $productos['precio'],
             // Agrega otros campos de SQL que necesites
         ];
 
