@@ -29,28 +29,43 @@ class CarritoController extends BaseController
             return redirect()->back()->with('error', 'Producto no encontrado.');
         }
         // 3. Preparar el ítem del carrito (con los datos SQL)
-        $cartItem = [
-            'producto_id'=> $productos['producto_id'],
-            'nombre'     => $productos['nombre'],
-            'precio'    => $productos['precio'],
-            // Agrega otros campos de SQL que necesites
-        ];
+        // Obtener cantidad enviada por POST (por defecto 1)
+        $quantity = (int) $this->request->getPost('cantidad') ?: 1;
 
-        // 4. Agregar/Actualizar en el array de la sesión
-        $cart = $this->session->get('cart');
+        // Normalizar el ID del producto desde la fila devuelta por el modelo
+        $dbProductId = null;
+        if (is_array($productos)) {
+            $dbProductId = $productos['producto_id'] ?? $productos['id'] ?? null;
+        } elseif (is_object($productos)) {
+            $cart = $this->session->get('cart') ?? [];
+            
+            // Verifica si el producto ya está en el carrito para actualizar la cantidad
+            $found = false;
+            foreach ($cart as $key => $item) {
+                if (isset($item['producto_id']) && $item['producto_id'] == $dbProductId) {
+                    $cart[$key]['qty'] = (isset($cart[$key]['qty']) ? (int)$cart[$key]['qty'] : 0) + $quantity;
+                    $found = true;
+                    break;
+                }
+            }
+        }    
+        if (!$found) {
+            $cart[] = $cartItem;
+        }
         
         // Verifica si el producto ya está en el carrito para actualizar la cantidad
         $found = false;
         foreach ($cart as $key => $item) {
-            if ($item['id'] == $productId) {
+            if ($item['producto_id'] == $productId) {
                 $cart[$key]['qty'] += (int) $quantity;
                 $found = true;
                 break;
             }
-        }
+        
 
         if (!$found) {
             $cart[] = $cartItem;
+        }
         }
         
         // 5. Guardar el array actualizado en la sesión
@@ -58,6 +73,7 @@ class CarritoController extends BaseController
 
         return redirect()->back()->with('success', 'Producto agregado al carrito.');
     }
+
     public function index()
     {
         // Obtener el array completo de la sesión
@@ -67,7 +83,7 @@ class CarritoController extends BaseController
             'cartItems' => $cartContent,
             'title'     => 'Tu Carrito de Compras'
         ];
-
-        return view('vista_buscar_producto', $data); // 'cart_page' es el nombre de tu vista
+        //return view('vista_buscar_producto', $data); // 'cart_page' es el nombre de tu vista
+        return view('vista_buscar_producto',$data); // 'cart_page' es el nombre de tu vista
     }
 }
