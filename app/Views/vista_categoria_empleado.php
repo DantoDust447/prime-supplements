@@ -56,50 +56,37 @@
     <main>
         <div class="text-center">
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
-                data-bs-target="#agregar_producto">
-                Agregar producto
+                data-bs-target="#agregar_categoria">
+                agregar categoria
             </button>
         </div>
         </div>
         <div class="container">
-            <h1 class="main-title">Productos</h1>
+            <h1 class="main-title">Categoria</h1>
         </div>
 
         <div class="product-container d-flex flex-wrap gap-3">
-            <?php foreach ($datos as $producto): ?>
+            <?php foreach ($categoria as $categoria): ?>
                 <div class="card product-card" style="width: 18rem;">
-                    <img src="<?= $producto['imagen_producto'] ?>" class="card-img-top product-image"
-                        alt="Imagen del producto">
-
                     <div class="card-body">
-                        <h5 class="card-title product-name"><?= $producto['nombre'] ?></h5>
-                        <p class="card-text product-description"><?= $producto['descripcion'] ?></p>
-                        <p class="product-price">$<?= $producto['precio'] ?></p>
+                        <h5 class="card-title product-name"><?= $categoria['categoria_id'] ?></h5>
+                        <p class="card-text product-description"><?= $categoria['categoria'] ?></p>
                         <div class="container">
-                            <div class="modal fade" id="agregar_producto" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            <div class="modal fade" id="agregar_categoria" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Producto nuevo</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Categoria Nueva</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="<?= base_url('agregar_producto') ?>" method="post">
-                                                <label for="producto_id" class="for-label">Producto_id</label>
-                                                <input type="text" name="producto_id" id="producto_id" class="form-control">
-                                                <label for="nombre" class="for-label">nombre</label>
-                                                <input type="text" name="nombre" id="nombre" class="form-control">
-                                                <label for="marca_id" class="for-label">marca_id</label>
-                                                <input type="number" name="marca_id" id="marca_id" class="form-control">
-                                                <label for="descripcion" class="for-label">descripcion</label>
-                                                <input type="text" name="descripcion" id="descripcion" class="form-control">
-                                                <label for="precio" class="for-label">precio</label>
-                                                <input type="number" name="precio" id="precio" class="form-control">
+                                            <form action="<?= base_url('agregar_categoria') ?>" method="post">
                                                 <label for="categoria_id" class="for-label">categoria_id</label>
-                                                <input type="number" name="categoria_id" id="categoria_id"
-                                                    class="form-control">
+                                                <input type="text" name="categoria_id" id="categoria_id" class="form-control">
+                                                <label for="nombre" class="for-label">categoria</label>
+                                                <input type="text" name="categoria" id="categoria" class="form-control">
                                                 <button type="submit" class="form-control btn btn-primary">Guardar</button>
                                             </form>
                                         </div>
@@ -110,10 +97,10 @@
                             </div>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="<?= base_url('eliminar_producto/' . $producto['producto_id']) ?>"
+                            <a href="<?= base_url('eliminar_categoria/' . $categoria['categoria_id']) ?>"
                                 class="btn btn-outline-info">Eliminar</a>
 
-                            <a href="<?= base_url('buscar_producto/' . $producto['producto_id']) ?>"
+                            <a href="<?= base_url('buscar_categoria/' . $categoria['categoria_id']) ?>"
                                 class="btn btn-outline-info">Modificar</a>
                         </div>
 
