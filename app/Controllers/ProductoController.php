@@ -15,13 +15,13 @@ class ProductoController extends BaseController
         
     }
 
-/*empleados*/
+
     public function index(): string 
     {
         $producto = new ProductosModel();
 
         $datos['datos'] = $producto->findAll();
-        return view('vista_producto_empleado', $datos);
+        return view('vista_producto_administrador', $datos);
     }
     public function eliminar($producto_id)
     {

@@ -17,7 +17,7 @@ class MarcaController extends BaseController
     {
         $marcas = new MarcasModel();
         $datos['datos'] = $marcas->findAll();
-        return view('vista_marcas_empleado', $datos);
+        return view('vista_marcas_administrador', $datos);
     }
 
     public function agregar()

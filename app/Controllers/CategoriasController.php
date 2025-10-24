@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Controllers;
 
 use App\Models\CategoriasModel;
-use App\Models\ProductosModel;
 
 class CategoriasController extends BaseController
 {
@@ -11,24 +9,23 @@ class CategoriasController extends BaseController
     {
         $categoria = new CategoriasModel();
         $datos['categorias'] = $categoria->findAll();
-        return view('vista_categoria_empleado', $datos);
+        return view('vista_categoria_administrador', $datos);
     }
 
-    
     public function buscar($id)
     {
         $categoria = new CategoriasModel();
-        $datos['categoria'] = $categoria->where('categoria_id', $id)->first();
-        return view('vista_categoria_empleado', $datos);
+        $datos['categorias'] = $categoria->where('categoria_id', $id)->first();
+        return view('vista_categoria_administrador', $datos);
     }
-
 
     public function index()
     {
         $categoria = new CategoriasModel();
-        $datos['datos'] = $categoria->findAll();
-        return view('vista_categoria_empleado', $datos);
+        $datos['categorias'] = $categoria->findAll();
+        return view('vista_categoria_administrador', $datos);
     }
+
     public function agregar()
     {
         $categoria = new CategoriasModel();
@@ -39,6 +36,7 @@ class CategoriasController extends BaseController
         $categoria->insert($datos);
         return redirect()->to(base_url('categorias'));
     }
+
     public function eliminar($id)
     {
         $categoria = new CategoriasModel();

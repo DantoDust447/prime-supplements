@@ -66,11 +66,11 @@
         </div>
 
         <div class="product-container d-flex flex-wrap gap-3">
-            <?php foreach ($categoria as $categoria): ?>
+            <?php foreach ($categorias as $datos): ?>
                 <div class="card product-card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title product-name"><?= $categoria['categoria_id'] ?></h5>
-                        <p class="card-text product-description"><?= $categoria['categoria'] ?></p>
+                        <h5 class="card-title product-name"><?= $datos['categoria_id'] ?></h5>
+                        <p class="card-text product-description"><?= $datos['categoria'] ?></p>
                         <div class="container">
                             <div class="modal fade" id="agregar_categoria" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
@@ -97,10 +97,10 @@
                             </div>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="<?= base_url('eliminar_categoria/' . $categoria['categoria_id']) ?>"
+                            <a href="<?= base_url('eliminar_categoria/' . $datos['categoria_id']) ?>"
                                 class="btn btn-outline-info">Eliminar</a>
 
-                            <a href="<?= base_url('buscar_categoria/' . $categoria['categoria_id']) ?>"
+                            <a href="<?= base_url('buscar_categoria/' . $datos['categoria_id']) ?>"
                                 class="btn btn-outline-info">Modificar</a>
                         </div>
 
